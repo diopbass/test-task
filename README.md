@@ -74,3 +74,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 This repository is a basic UI test but includes most of core UI functions,
  using Tailwindcss [https://tailwindcss.com/] a utility-first CSS framework packed with classes.
+
+### Installed packages
+
+-React-router-dom v6 [https://reactrouter.com/en/v6.3.0/getting-started/installation#basic-installation];
+-Reduxjs/toolkit [https://redux-toolkit.js.org/tutorials/quick-start] for react-redux
