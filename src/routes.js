@@ -1,5 +1,6 @@
 // import Login from './auth/Login';
 import DefaultLayout from './layouts/DefaultLayout'
+import ChatRoom from './views/ChatRoom';
 import Signin from './views/Signin';
 
 
@@ -10,6 +11,12 @@ const routes =  [
        exact: true,
        layout: DefaultLayout,
        element: Signin
+    },
+    {
+       path: '/chat-room',
+       exact: true,
+       layout: DefaultLayout,
+       element: ChatRoom
     },
 ]
 
