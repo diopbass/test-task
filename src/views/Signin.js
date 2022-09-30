@@ -1,9 +1,56 @@
 
 // import { LockClosedIcon } from '@heroicons/react/20/solid'
 
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../features/users/userSlice";
+import {  useNavigate } from "react-router-dom";
 import FormInput from "../components/forms/FormInput";
 
+
 export default function Signin() {
+
+  const [name, setName] = useState()
+  const [error, setError] = useState(false)
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+
+  const handleChange = (e) => {
+    setName(e.target.value)
+    if (e.target.value) {
+      setError(false)
+    }
+  }
+
+
+  const validateForm = () => {
+    let isValidForm = true;
+   
+    if(!name) {
+        isValidForm = false;
+        setError(true)
+
+        setTimeout(() => {
+          setError(true)
+        }, 5000);
+    }
+
+    return isValidForm;
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if(validateForm()){
+        const usernameParams = name.split(' ').join('-');
+        sessionStorage.setItem('username', name)
+        dispatch(login(name))
+        navigate(`/chat-room/${usernameParams}`)
+    }
+  }
+
+
   return (
     <>
       <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -19,12 +66,16 @@ export default function Signin() {
             </h2>
             
           </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
-            <div className="-space-y-px rounded-md shadow-sm">
+          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+            <div className="-space-y-px">
               <FormInput
                 placeholder="Enter your Name"
                 id="username"
-                name="username"
+                name="name"
+                onChange={handleChange}
+                value={name}
+                error={error}
+                errorText="This field is required"
               />
             </div>
             <div>

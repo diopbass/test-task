@@ -13,7 +13,7 @@ const routes =  [
        element: Signin
     },
     {
-       path: '/chat-room',
+       path: '/chat-room/:username',
        exact: true,
        layout: DefaultLayout,
        element: ChatRoom

@@ -17,7 +17,7 @@ function FormInput({
 }) {
   const hasError = error 
   const finalClass = `${className}  relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm ${
-    hasError && 'border-red-600'
+    hasError && 'border-red-600 mb-1'
   }`
 
   const labelClassName = `absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1 ${
@@ -42,14 +42,15 @@ function FormInput({
         />
       </div>
       {description && (
-        <p id="floating_helper_text" class="mt-2 text-xs text-gray-500 dark:text-gray-400">
+        <p id="floating_helper_text" className="mt-2 text-xs text-gray-500">
           {description} 
         </p>
       )}
+
       {error && (
-      <p id="filled_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400">
-          {errorText}
-      </p>
+        <p id="filled_error_help" className="mt-2 text-xs text-red-600">
+            {errorText}
+        </p>
       )}
     </>
   )
