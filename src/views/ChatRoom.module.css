@@ -1,8 +1,8 @@
 
 .sectionChat {
-    @apply overflow-hidden bg-white shadow sm:rounded-lg;
+    @apply container w-screen flex md:justify-center overflow-hidden bg-gray-100;
 }
 
 .btnChat {
-    @apply inline-flex justify-center p-2 text-blue-600 rounded-full cursor-pointer hover:bg-blue-100 dark:text-blue-500 dark:hover:bg-gray-600;
+    @apply inline-flex justify-center p-2 disabled:opacity-50 bg-blue-600 text-white rounded-full cursor-pointer;
 }

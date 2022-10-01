@@ -52,8 +52,9 @@ export const fetchChats = () => async (dispatch) => {
 
 export const addChat = (data) => async (dispatch) => {
 
+    
+    // localStorage.setItem('messages', JSON.stringify(data) );
     try {
-        localStorage.setItem('messages', JSON.stringify(data) );
         dispatch(createChatSuccess(data));
     } catch (error) {
         dispatch(hasError())
