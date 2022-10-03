@@ -62,7 +62,7 @@ export default function Signin() {
               alt="Your Company"
             />
             <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-              Sign in to your account
+              Sign in to chat
             </h2>
             
           </div>

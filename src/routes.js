@@ -1,23 +1,24 @@
 // import Login from './auth/Login';
+import { createBrowserRouter } from 'react-router-dom';
 import DefaultLayout from './layouts/DefaultLayout'
 import ChatRoom from './views/ChatRoom';
 import Signin from './views/Signin';
 
 
-
-const routes =  [
-    {
-       path: '/',
-       exact: true,
-       layout: DefaultLayout,
-       element: Signin
-    },
-    {
-       path: '/chat-room/:username',
-       exact: true,
-       layout: DefaultLayout,
-       element: ChatRoom
-    },
-]
-
-export default routes;
+const router = createBrowserRouter([
+   {
+      path: '/',
+      element: <Signin />
+   },
+   {
+     path: "/",
+     element: <DefaultLayout />,
+     children: [
+       {
+         path: "/chat-room/:username",
+         element: <ChatRoom />,
+       },
+     ],
+   },
+ ]);
+export default router;

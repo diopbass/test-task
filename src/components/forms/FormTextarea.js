@@ -14,7 +14,7 @@ function FormTextarea({
   ...newProps
 }) {
   const hasError = error 
-  const finalClass = `${className} block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm   ${
+  const finalClass = `${className} block mx-1 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm   ${
     hasError && 'border-red-600'
   }`
 
