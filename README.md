@@ -79,3 +79,4 @@ This repository is a basic UI test but includes most of core UI functions,
 
 -React-router-dom v6 [https://reactrouter.com/en/v6.3.0/getting-started/installation#basic-installation];
 -Reduxjs/toolkit [https://redux-toolkit.js.org/tutorials/quick-start] for react-redux
+-Use-location-storage [https://github.com/astoilkov/use-local-storage-state]
